@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Carica il font direttamente */
+@font-face {
+	font-family: 'Disket Mono';
+	src: url('/font/Disket-Mono-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Disket Mono';
+	src: url('/font/Disket-Mono-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@theme {
+	--color-primary: oklch(0.6595 0.113 169deg);  /* #38a886 */
+	--color-background: oklch(0.9821 0 0deg);
+	--color-foreground: oklch(0.2046 0 0deg);
+	--animation-spin-slow: spin 20s linear infinite;
+	--font-disket: 'Disket Mono', ui-monospace, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+	@theme {
+		--color-background: oklch(0.2178 0 0deg);
+		--color-foreground: oklch(0.9461 0 0deg);
+	}
+}
+
+body {
+	background: var(--color-background);
+	color: var(--color-foreground);
+	font-family: var(--font-disket);
+}
